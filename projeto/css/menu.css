@@ -1,0 +1,82 @@
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: darkblue;
+    overflow: hidden;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+    display: block;
+    border-right: solid 0.5px black;
+}
+
+.menu li a:hover,
+.menu li a:focus {
+    background-color: white;
+    color: darkblue;
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: 2s
+}
+
+/* Exercício:
+Crie uma media query para telas de até 760px com
+as seguintes configurações:
+
+-Itens do menu: desativar a propriedade float
+-Links contidos nos itens do menu: alinhamento do texto centralizado */
+/*  @media screen and (max-width: 760px) {
+    .menu li {
+        float: none
+    }
+
+    .menu a {
+        text-align: center
+    }
+}*/
+
+.menu li.icone {
+    display: none;
+}
+
+@media screen and (max-width: 760px) {
+    .menu li {
+        display: none;
+    }
+
+    .menu li.icone {
+        display: block;
+        float: right;
+    }
+
+    .menu.responsivo {
+        position: relative;
+    }
+
+    .menu.responsivo li.icone {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .menu.responsivo li {
+        float: none;
+        display: inline;
+    }
+}
